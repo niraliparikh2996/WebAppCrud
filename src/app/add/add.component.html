@@ -1,0 +1,56 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add User</h2>
+    <form [formGroup]="addUser">
+        <div class="form-group">
+            <label for="id">Id </label>
+            <input type="id" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+            <div *ngIf="addUser.controls['id'].invalid && (addUser.controls['id'].dirty || addUser.controls['id'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addUser.controls['id'].errors.required">
+                    id is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input formControlName="username" placeholder="username" name="username" class="form-control" id="username">
+            <div *ngIf="addUser.controls['username'].invalid && (addUser.controls['username'].dirty || addUser.controls['username'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addUser.controls['username'].errors.required">
+                    Username is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+            <div *ngIf="addUser.controls['email'].invalid && (addUser.controls['email'].dirty || addUser.controls['email'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addUser.controls['email'].errors.required">
+                    Email is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input formControlName="phone" placeholder="phone" name="phone" class="form-control" id="phone">
+            <div *ngIf="addUser.controls['phone'].invalid && (addUser.controls['phone'].dirty || addUser.controls['phone'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addUser.controls['phone'].errors.required">
+                    Phone is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="website">website:</label>
+            <input formControlName="website" placeholder="website" name="website" class="form-control" id="website">
+            <div *ngIf="addUser.controls['website'].invalid && (addUser.controls['website'].dirty || addUser.controls['website'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addUser.controls['website'].errors.required">
+                    website is required.
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success" (click)="addUsers()" [disabled]="addUser.invalid">Add User</button>
+    </form>
+</div>

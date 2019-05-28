@@ -1,0 +1,47 @@
+<div class="col-md-6">
+    <h2 class="text-center">Edit User</h2>
+    <form [formGroup]="editUser">
+        
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input formControlName="username" placeholder="username" name="username" class="form-control" id="username">
+            <div *ngIf="editUser.controls['username'].invalid && (editUser.controls['username'].dirty || editUser.controls['username'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editUser.controls['username'].errors.required">
+                    Username is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+            <div *ngIf="editUser.controls['email'].invalid && (editUser.controls['email'].dirty || editUser.controls['email'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editUser.controls['email'].errors.required">
+                    Email is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input formControlName="phone" placeholder="phone" name="phone" class="form-control" id="phone">
+            <div *ngIf="editUser.controls['phone'].invalid && (editUser.controls['phone'].dirty || editUser.controls['phone'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editUser.controls['phone'].errors.required">
+                    Phone is required.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="website">website:</label>
+            <input formControlName="website" placeholder="website" name="website" class="form-control" id="website">
+            <div *ngIf="editUser.controls['website'].invalid && (editUser.controls['website'].dirty || editUser.controls['website'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="editUser.controls['website'].errors.required">
+                    website is required.
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success" (click)="editUsers()" [disabled]="editUser.invalid">Edit User</button>
+    </form>
+</div>
